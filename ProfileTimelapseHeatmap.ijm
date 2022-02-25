@@ -3,12 +3,12 @@ rename("window");
 openDir = getDirectory("Choose a Directory");
 Table.create("heat");
 
-// plot profile for all slices and put into a table
+// plot profile for all slices and put them into a table
 for (i = 1; i < Num; i++) {
 	selectWindow("window");
 	setSlice(i);
 	run("Plot Profile");
-    Plot.getValues(x, y);
+	Plot.getValues(x, y);
 	Table.setColumn(i, y);	
 	close();
 }
